@@ -9,16 +9,16 @@
   "description": "none",
   "keywords": [
     "object",
-	"equal",
+    "equal",
     "keys",
-	"properties"
+    "properties"
   ],
   "repository": {
     "type": "git",
     "url": "https://github.com/ArtskydJ/mock-dom-storage"
   },
   "devDependencies": {
-    "tap": "~0.4.8"
+    "tap": "^0.4.11"
   },
   "directories": {
     "test": "test"
@@ -26,6 +26,5 @@
   "scripts": {
     "test": "tap ./test/*.js"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
