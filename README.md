@@ -3,6 +3,7 @@ mock-dom-storage
 
 - [Install](#install)
 - [Require](#require)
+- [Conformation](#conformation)
 - [MockDomStorage()](#mockdomstorage)
 - [License](#license)
 
@@ -12,6 +13,13 @@ mock-dom-storage
 ##Require
 
 	var MockDomStorage = require('mock-dom-storage')
+
+##Conformation
+
+This module lacks:
+
+- the `length` property
+- writing to disk (stores in memory)
 
 ##MockDomStorage()
 
