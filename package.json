@@ -6,7 +6,7 @@
     "name": "ArtskydJ",
     "email": "josephdykstra@gmail.com"
   },
-  "description": "none",
+  "description": "localStorage or sessionStorage mock",
   "keywords": [
     "object",
     "equal",
@@ -17,14 +17,11 @@
     "type": "git",
     "url": "https://github.com/ArtskydJ/mock-dom-storage"
   },
-  "devDependencies": {
-    "tap": "^0.4.11"
-  },
-  "directories": {
-    "test": "test"
-  },
   "scripts": {
-    "test": "tap ./test/*.js"
+    "test": "node test.js"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "tape": "^4.0.1"
+  }
 }

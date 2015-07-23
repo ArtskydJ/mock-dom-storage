@@ -1,12 +1,17 @@
-﻿function MockDomStorage() {
-	var storage = {}
-	return {
-		key: function key(index) { return storage[index] },
-		getItem: function getItem(key) { return storage[key]? storage[key] : null },
-		setItem: function setItem(key, val) { storage[key] = val; len++ },
-		removeItem: function removeItem(key) { delete storage[key]; len-- },
-		clear: function clear() { storage = {}; len=0 }
-	}
-}
+module.exports = function MockDomStorage() {
+	var items = {}
 
-module.exports = MockDomStorage
+	var storage = {
+		getItem: function getItem(key) { return (items[key] == null) ? null : items[key] },
+		setItem: function setItem(key, val) { items[key] = val; },
+		removeItem: function removeItem(key) { delete items[key] },
+		clear: function clear() { items = {} },
+		key: function key(index) { return Object.keys(items)[index] }
+	}
+
+	Object.defineProperty(storage, 'length', {
+		get: function () { return Object.keys(items).length }
+	})
+
+	return storage
+}

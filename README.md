@@ -1,34 +1,45 @@
 mock-dom-storage
-=============
+================
 
-- [Install](#install)
-- [Require](#require)
-- [Conformation](#conformation)
-- [MockDomStorage()](#mockdomstorage)
-- [License](#license)
+An in-memory implementation of the [Storage API](https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Storage), for testing!
 
-##Install
+```js
+var localStorage = MockDomStorage()
+
+localStorage.setItem('thing', 'value')
+localStorage.getItem('thing') // => 'value'
+localStorage.getItem('unknown') // => null
+localStorage.length // => 1
+localStorage.setItem('hello', 'world')
+localStorage.setItem('name', 'person')
+localStorage.length // => 3
+```
+
+# api
+
+```js
+var mockStorage = require('mock-dom-storage')
+```
+
+# `var storage = mockStorage()`
+
+The resulting object should, on the surface, be identical to sessionStorage or localStorage.
+
+## `storage`
+
+- `storage.getItem(key)`
+- `storage.setItem(key, val)`
+- `storage.removeItem(key)`
+- `storage.clear()`
+- `storage.key(index)`
+- `storage.length`
+
+# install
+
+Install using [npm](https://nodejs.org/download)
+
 	npm install mock-dom-storage
-	
-##Require
 
-	var MockDomStorage = require('mock-dom-storage')
+# license
 
-##Conformation
-
-This module lacks:
-
-- the `length` property
-- writing to disk (stores in memory)
-
-##MockDomStorage()
-
-The resulting object should, on the surface, be almost identical to sessionStorage or localStorage. (See [DOM Storage guide](https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Storage) at MDN.)
-
-	localStorage = MockDomStorage() //purposeful lack of 'var'
-
-	//your test that uses localStorage here...
-
-##License
-
-[MIT](http://opensource.org/licenses/MIT)
+[VOL](http://veryopenlicense.com/)
